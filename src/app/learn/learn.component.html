@@ -1,0 +1,12 @@
+<div>
+  <p>{{decNumber}}</p>
+  <p>{{strInfo}}</p>
+  <p *ngIf="isDone">{{decSum}}</p>
+  <ul>
+    <li *ngFor="let item of arr">
+      <span>{{item}}</span>
+    </li>
+  </ul>
+
+  <button (click)="UserClick('ClickMe')">按钮点击事件</button>
+</div>
