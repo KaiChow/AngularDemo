@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
 import { Hero} from './hero'
 
 @Component({
@@ -12,7 +12,16 @@ export class HeroChildComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  /* 这是子组件 */
   @Input() hero:Hero;
-  @Input('master') masterName:string
+  @Input('master') masterName: string
+
+  
+  @Input() age:number;
+
+  @Output() deleteRequest = new EventEmitter<number>();
+  delete(){
+    this.age--;
+    this.deleteRequest.emit(this.age);
+  }
 }

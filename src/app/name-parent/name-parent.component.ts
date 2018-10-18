@@ -11,5 +11,6 @@ export class NameParentComponent implements OnInit {
 
   ngOnInit() {
   }
+  /* 父组件数据 */
   names = ['Mr. IQ', ' ', ' Bombasto '];
 }

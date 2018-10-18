@@ -11,6 +11,7 @@ export class VersionParentComponent implements OnInit {
 
   ngOnInit() {
   }
+  /* 父组件数据 */
   major = 1;
   minor = 23;
 

@@ -10,8 +10,9 @@ import { Loger } from "../loger";
 })
 export class HeroComponent implements OnInit {
 
+  /* 这是父组件 */
   heroes = [new Hero(1, "Kevin"), new Hero(2, "Tom"), new Hero(3, "Alex")];
-  master="Master";
+  master = "Master";
   isUnchanged = true;
   constructor(private loger: Loger) { }
   ngOnInit() {
@@ -21,9 +22,32 @@ export class HeroComponent implements OnInit {
   loginInfo(msg: string) {
     this.loger.log(msg);
   }
+  age=10;
+
 
   getInfo() {
     console.log(this.isUnchanged);
+  }
+  emotion = "";
+  happycase = "happy";
+
+  happy() {
+    this.emotion = "happy";
+  }
+  sad() {
+    this.emotion = "sad";
+  }
+  comfused() {
+    this.emotion = "comfused";
+  }
+
+  inputNumber = 10;
+
+  inputValueLog(value) {
+    console.log(value);
+  }
+  deleteHero(ev) {
+    console.log("output:"+ev);
   }
 
 }

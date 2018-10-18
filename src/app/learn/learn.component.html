@@ -3,10 +3,38 @@
   <p>{{strInfo}}</p>
   <p *ngIf="isDone">{{decSum}}</p>
   <ul>
-    <li *ngFor="let item of arr">
-      <span>{{item}}</span>
+    <li *ngFor="let item of nameStr trackBy trackByHeroes">
+      <span>{{item.name}}</span>
     </li>
   </ul>
 
-  <button (click)="UserClick('ClickMe')">按钮点击事件</button>
+  <button (click)="UserClick('ClickMe')" [disabled]="isDone">按钮点击事件</button>
+  <!-- 有的特例属性要attr.开头 -->
+  <table border=1>
+    <tr>
+      <td [attr.colspan]="1 + 1">One-Two </td>
+    </tr>
+    <tr>
+      <td>Five </td>
+      <td>Six </td>
+    </tr>
+  </table>
+  <!-- class绑定 -->
+  <!-- 1,直接命名   className="active" -->
+  <div [class]="className">class的绑定</div>
+  <!-- 2,布尔类型  specialName=true-->
+  <div [class.special]="specialName">绑定到特定的类名</div>
+  <!-- 3,ngClass -->
+  <div [ngClass]="{'hover': true,'select':true}">ngClass绑定</div>
+
+  <!-- 4,样式绑定 -->
+  <!--  4-1  isSpecial=true  -->
+  <button [style.background-color]="isSpecial?'red':'green'">样式绑定1</button>
+  <!--  4-2  bingColor=red -->
+  <button [style.color]="bingColor">样式绑定2</button>
+  <!--  4-3   ngStyle设置内联样式 bingStyle = {
+  'font-size': 13 +"px",
+  'color':"red"
+  };-->
+  <button [ngStyle]="bingStyle">设置内联样式</button>
 </div>

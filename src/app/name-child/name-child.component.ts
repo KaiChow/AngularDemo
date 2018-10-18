@@ -12,12 +12,13 @@ export class NameChildComponent implements OnInit {
   ngOnInit() {
   }
 
+  /* 子组件 */
   private _name = "";
   @Input()
   set name(name: string) {
-    this._name = (name && name.trim())||"no data"
+    this._name = (name && name.trim()) || "no data"
   }
-  get name():string{
+  get name(): string {
     return this._name;
   }
 

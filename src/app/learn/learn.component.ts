@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Hero } from '../hero-child/hero'
 
 @Component({
   selector: "app-learn",
@@ -6,18 +7,35 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./learn.component.css"]
 })
 export class LearnComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   isDone: boolean = true; //布尔值
   decNumber: number = 123; //TypeScript里的所有数字都是浮点数,也就是有js的数据处理的精度问题
   strName: string = "kevin";
+  className = "active";
   decSum: number = 0.3 + 0.6; //0.899999999999
   strInfo: string = `my name is ${this.strName}`;
+  specialName = false;
+  isSpecial = false;
+  bingColor = "red";
+  bingStyle = {
+    'font-size': 13 + "px",
+    'color': "red"
+  };
   /*  数组形成的两种方式 */
   arr: string[] = ["kevin", "alex", "tom"];
   arr1: Array<number> = [1, 2, 3, 4];
+  nameStr = [
+    { id: 1, name: "kevin" },
+    { id: 3, name: "tom" },
+    { id: 2, name: "alex" }
+  ]
+
+
+  trackByHeroes(index: number, item: Hero): number { return item.id; }
+
 
   /* 枚举 */
 
@@ -36,5 +54,6 @@ export class LearnComponent implements OnInit {
     return 1;
   }
 
-  
+
+
 }

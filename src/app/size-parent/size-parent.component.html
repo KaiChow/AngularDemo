@@ -1,0 +1,7 @@
+<!-- 这是父组件模板 -->
+<div>
+  <p>事件</p>
+  <app-size-child [(size)]="fontSizePx" (deleteRequest)="deletelog($event)"   ></app-size-child>
+  <!-- <app-size-child [size]="fontSizePx" (sizeChange)="fontSizePx=$event" ></app-size-child> -->
+  <div [style.font-size.px]="fontSizePx"> Resizable Text </div>
+</div>

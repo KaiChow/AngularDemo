@@ -6,11 +6,10 @@ import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
   styleUrls: ['./version-child.component.css']
 })
 export class VersionChildComponent implements OnChanges {
-
+/* 这是子组件数据 */
   @Input() major: number;
   @Input() minor: number;
   changeLog: string[] = [];
-
   ngOnChanges(changes: { [propKey: string]: SimpleChange }): void {
     console.log(changes);
     let log: string[] = [];
